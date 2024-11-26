@@ -1,0 +1,45 @@
+<div class="student-form">
+  <h2>Student Details</h2>
+  <form action="" (ngSubmit)="addStudent()" #studentForm="ngForm">
+    <div>
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        [(ngModel)]="student.name"
+        [ngModelOptions]="{ standalone: true }"
+        required
+      />
+    </div>
+    <div>
+      <label for="Age">age:</label>
+      <input
+        type="number"
+        id="name"
+        [(ngModel)]="student.age"
+        [ngModelOptions]="{ standalone: true }"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="grade">grade:</label>
+      <input
+        type="text"
+        id="grade"
+        [(ngModel)]="student.grade"
+        [ngModelOptions]="{ standalone: true }"
+        required
+      />
+    </div>
+    <div>
+      <button type="submit" [disabled]="!studentForm.valid">Add Student</button>
+    </div>
+  </form>
+  <h3>Student list</h3>
+  <ul>
+    <li *ngFor="let stu of students">
+      {{ stu.name }} Age:: {{ stu.age }} grade :: {{ stu.grade }}
+    </li>
+  </ul>
+</div>

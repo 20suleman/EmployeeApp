@@ -1,23 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { StudentComponent } from './student/student.component';
+import { Component, } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-student',
   standalone: true,
-  imports: [
-    CommonModule,
-    StudentComponent,
-    FormsModule,
-    CommonModule,
-    CommonModule,
-  ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  imports: [FormsModule, CommonModule],
+  templateUrl: './student.component.html',
+  styleUrl: './student.component.css',
 })
-export class AppComponent {
+export class StudentComponent {
   student = { name: '', age: null as number | null, grade: '' };
   students: {
     name: string;
